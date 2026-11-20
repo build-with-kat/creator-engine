@@ -1,0 +1,21 @@
+# Creator Engine rules. Version bumps on every approved rule. score.py reads this file.
+version: 1
+updated: 2026-11-21
+weights:            # must sum to 1.0
+  dev_audience_fit: 0.30
+  building_evidence: 0.25
+  creative_product_fit: 0.20
+  organic_performance: 0.15
+  community_intent: 0.10
+priority:           # on the 1-5 overall
+  high: 4.0
+  medium: 3.0
+# Learned rules (added only after Kat approves a proposed rule). Format:
+# - id: R1
+#   date: YYYY-MM-DD
+#   from_reason: "Kat's reason, quoted"
+#   kind: adjust | exclude | weight     # adjust = add delta to overall when condition true
+#   when: {column: <scores.csv or pool.csv column>, op: eq|ne|contains|gt|lt|gte|lte, value: <x>}
+#   delta: -0.5                          # adjust only
+#   weights: {...}                       # weight only (replaces weights)
+rules: []
